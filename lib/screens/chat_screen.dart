@@ -100,6 +100,63 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: const Color(0xFF1E3A8A), // 金融蓝深色
         centerTitle: true,
         elevation: 2,
+        actions: [
+          Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.history, color: Colors.white),
+                tooltip: "历史对话",
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              );
+            },
+          ),
+        ],
+      ),
+      endDrawer: Drawer(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.all(16.0),
+                child: const Text(
+                  "历史对话",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF1E3A8A),
+                  ),
+                ),
+              ),
+              const Divider(height: 1),
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    ListTile(
+                      leading: const Icon(Icons.chat_bubble_outline, color: Colors.grey),
+                      title: const Text("贵州茅台2023年财报分析"),
+                      subtitle: const Text("昨天"),
+                      onTap: () {
+                        Navigator.pop(context); // 点击后收起抽屉，后续可在这里添加切换对话逻辑
+                      },
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.chat_bubble_outline, color: Colors.grey),
+                      title: const Text("比亚迪和五粮液的研发对比"),
+                      subtitle: const Text("2023-08-15"),
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: Column(
         children: [

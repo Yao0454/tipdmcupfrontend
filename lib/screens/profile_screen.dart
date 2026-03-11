@@ -11,6 +11,8 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,16 +38,7 @@ class ProfileScreen extends StatelessWidget {
           const Center(
             child: Text("所属机构：平安证券", style: TextStyle(fontSize: 14, color: Colors.grey)),
           ),
-          const SizedBox(height: 32),
-          ListTile(
-            leading: const Icon(Icons.history),
-            title: const Text("历史对话"),
-            trailing: const Icon(Icons.chevron_right),
-            tileColor: Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            onTap: () {},
-          ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 16),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text("系统设置"),
